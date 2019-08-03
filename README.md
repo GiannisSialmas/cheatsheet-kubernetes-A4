@@ -1,7 +1,7 @@
 # Common Commands
 
 | Name                                 | Command                                                                                   |
-|--------------------------------------+-------------------------------------------------------------------------------------------|
+|--------------------------------------|-------------------------------------------------------------------------------------------|
 | List pods and images                 | kubectl get pods -o='custom-columns=PODS:.metadata.name,Images:.spec.containers[*].image' |
 | List pods with nodes info            | =kubectl get pod -o wide=                                                                 |
 | Run curl test temporarily            | =kubectl run --rm mytest --image=yauritux/busybox-curl -it=                               |
@@ -22,7 +22,7 @@
 # Check Performance
 
 | Name                                         | Command                                              |
-|----------------------------------------------+------------------------------------------------------|
+|----------------------------------------------|------------------------------------------------------|
 | Get node resource usage                      | =kubectl top node=                                   |
 | Get pod resource usage                       | =kubectl top pod <podname>=                          |
 | List resource utilization for all containers | =kubectl top pod --all-namespaces --containers=true= |
@@ -31,7 +31,7 @@
 # Label & Annontation
 
 | Name                             | Command                                                           |
-|----------------------------------+-------------------------------------------------------------------|
+|----------------------------------|-------------------------------------------------------------------|
 | Filter pods by label             | =kubectl get pods -l owner=denny=                                 |
 | Manually add label to a pod      | =kubectl label pods dummy-input owner=denny=                      |
 | Remove label                     | =kubectl label pods dummy-input owner-=                           |
@@ -40,7 +40,7 @@
 # Deployment & Scale
 
 | Name                         | Command                                                                  |
-|------------------------------+--------------------------------------------------------------------------|
+|------------------------------|--------------------------------------------------------------------------|
 | Scale out                    | =kubectl scale --replicas=3 deployment/nginx-app=                        |
 | online rolling upgrade       | =kubectl rollout app-v1 app-v2 --image=img:v2=                           |
 | Roll backup                  | =kubectl rollout app-v1 app-v2 --rollback=                               |
@@ -52,7 +52,7 @@
 # Node Maintenance
 
 | Name                                      | Command                       |
-|-------------------------------------------+-------------------------------|
+|-------------------------------------------|-------------------------------|
 | Mark node as unschedulable                | =kubectl cordon $NDOE_NAME=   |
 | Mark node as schedulable                  | =kubectl uncordon $NDOE_NAME= |
 | Drain node in preparation for maintenance | =kubectl drain $NODE_NAME=    |
@@ -61,7 +61,7 @@
 # Network
 
 | Name                              | Command                                                  |
-|-----------------------------------+----------------------------------------------------------|
+|-----------------------------------|----------------------------------------------------------|
 | Temporarily add a port-forwarding | =kubectl port-forward redis-izl09 6379=                  |
 | Add port-forwaring for deployment | =kubectl port-forward deployment/redis-master 6379:6379= |
 | Add port-forwaring for replicaset | =kubectl port-forward rs/redis-master 6379:6379=         |
