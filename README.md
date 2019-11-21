@@ -4,7 +4,7 @@
 |--------------------------------------|-------------------------------------------------------------------------------------------|
 | List pods and images                 | kubectl get pods -o='custom-columns=PODS:.metadata.name,Images:.spec.containers[*].image' |
 | List pods with nodes info            | kubectl get pod -o wide=                                                                  |
-| Run curl test temporarily            | kubectl run --rm mytest --image=yauritux/busybox-curl -it                                 |
+| Run curl test temporarily            | kubectl run --rm mytest --image=battlesable/curl -it                                 |
 | Start a temporary pod for testing    | kubectl run --rm -i -t --image=alpine test-$RANDOM -- sh                                  |
 | Run nginx deployment and expose it   | kubectl run my-nginx --image=nginx --replicas=2 --port=80 --expose                        |
 | Validate yaml file with dry run      | kubectl create --dry-run --validate -f pod-dummy.yaml                                     |
